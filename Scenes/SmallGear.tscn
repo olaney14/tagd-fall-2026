@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://k2w131dl2eq7"]
+
+[ext_resource type="Script" uid="uid://k6m210k0u5dk" path="res://Scenes/Gear.gd" id="1_kcnqn"]
+[ext_resource type="Texture2D" uid="uid://b7ufvljsdhskr" path="res://Textures/Gears/temp_gear.png" id="1_yxn2d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcnqn"]
+radius = 45.01111
+
+[node name="SmallGear" type="Node2D" unique_id=2075832475]
+script = ExtResource("1_kcnqn")
+
+[node name="TempGear" type="Sprite2D" parent="." unique_id=1739178433]
+texture = ExtResource("1_yxn2d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=453999730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=241876940]
+shape = SubResource("CircleShape2D_kcnqn")
+
+[connection signal="input_event" from="Area2D" to="." method="_gear_clicked"]

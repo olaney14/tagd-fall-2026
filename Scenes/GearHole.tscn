@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dhx0otwrl83vy"]
+
+[ext_resource type="Texture2D" uid="uid://dtytrdlfbkxfn" path="res://Textures/Gears/temp_hole.png" id="1_xo55e"]
+
+[node name="GearHole" type="Node2D" unique_id=2023571061]
+
+[node name="TempHole" type="Sprite2D" parent="." unique_id=973308377]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_xo55e")

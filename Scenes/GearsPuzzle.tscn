@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bvj628parihkh"]
+
+[ext_resource type="Script" uid="uid://5ufprenwku48" path="res://Scripts/GearsPuzzle.gd" id="1_17w1d"]
+[ext_resource type="PackedScene" uid="uid://dhx0otwrl83vy" path="res://Scenes/GearHole.tscn" id="2_op5mx"]
+[ext_resource type="Texture2D" uid="uid://t7n8aniky5n6" path="res://Textures/Gears/temp_panel.png" id="3_11hqm"]
+[ext_resource type="PackedScene" uid="uid://k2w131dl2eq7" path="res://Scenes/SmallGear.tscn" id="3_d2k44"]
+
+[node name="GearsPuzzle" type="Node2D" unique_id=1510164148]
+script = ExtResource("1_17w1d")
+hole_image = ExtResource("2_op5mx")
+grid_size = Vector2i(6, 6)
+
+[node name="Board" type="Node2D" parent="." unique_id=627713212]
+
+[node name="BoardPanel" type="Sprite2D" parent="Board" unique_id=539880655]
+position = Vector2(312.99997, 260)
+scale = Vector2(0.9235706, 1.2094972)
+texture = ExtResource("3_11hqm")
+
+[node name="Pegs" type="Node2D" parent="Board" unique_id=1520342113]
+
+[node name="Gears" type="Node2D" parent="Board" unique_id=1976761898]
+
+[node name="SmallGear" parent="Board/Gears" unique_id=2075832475 instance=ExtResource("3_d2k44")]
+position = Vector2(151, 149)
+
+[node name="Backpack" type="Node2D" parent="." unique_id=383811522]
+
+[node name="BoardPanel" type="Sprite2D" parent="Backpack" unique_id=708055362]
+position = Vector2(884.99994, 254)
+scale = Vector2(0.42911315, 1.2094972)
+texture = ExtResource("3_11hqm")

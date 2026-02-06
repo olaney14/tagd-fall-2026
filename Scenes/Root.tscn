@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cjnynesg417ve"]
+
+[ext_resource type="PackedScene" uid="uid://bvj628parihkh" path="res://Scenes/GearsPuzzle.tscn" id="1_a5hps"]
+
+[node name="Root" type="Node2D" unique_id=465597083]
+
+[node name="GearsPuzzle" parent="." unique_id=1510164148 instance=ExtResource("1_a5hps")]
+position = Vector2(88, 61)
