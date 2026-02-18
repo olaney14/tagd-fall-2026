@@ -3,7 +3,7 @@ var edge_margin = 50 # Pixels from edge to trigger rotation
 var senstivity = 0.01
 @onready var viewport = get_viewport()
 @onready var head = $"."
-@onready var camera = $camera
+@onready var camera = $Camera
 
 func _process(delta):
 	var mouse_pos = viewport.get_mouse_position()

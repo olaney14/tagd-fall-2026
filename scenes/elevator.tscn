@@ -8,11 +8,11 @@
 
 [node name="Node3D" type="Node3D" unique_id=738001711]
 
-[node name="head" type="Node3D" parent="." unique_id=927805469]
+[node name="Head" type="Node3D" parent="." unique_id=927805469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2017353, 0)
 script = ExtResource("1_8o2wm")
 
-[node name="camera" type="Camera3D" parent="head" unique_id=929296554]
+[node name="Camera" type="Camera3D" parent="Head" unique_id=929296554]
 
 [node name="Elevator" type="Node" parent="." unique_id=611212336]
 
@@ -40,13 +40,24 @@ mesh = SubResource("BoxMesh_pc862")
 transform = Transform3D(4.729, 0, 0, 0, 5.36, 0, 0, 0, 0.082, -0.04, 1.5039608, 1.862679)
 mesh = SubResource("BoxMesh_pc862")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1435942585]
-transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, -0.93410623, 1.4001744, -2.040175)
-mesh = SubResource("BoxMesh_a1q2r")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1682022544]
-transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, 0.7681434, 1.4001744, -2.040175)
-mesh = SubResource("BoxMesh_a1q2r")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=685713477]
 transform = Transform3D(1, 0, 0, 0, 0.31765223, 0.9482073, 0, -0.9482073, 0.31765223, 0, 0, 0)
+visible = false
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1085533163]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4.095114, 0)
+light_energy = 0.8
+spot_range = 13.978
+spot_attenuation = 1.5
+spot_angle = 180.0
+
+[node name="Elevator doors" type="Node3D" parent="." unique_id=2075542405]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17754734, 1.8163266, -2.2126076)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Elevator doors" unique_id=1435942585]
+transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, -0.7565589, -0.41615224, 0.17243266)
+mesh = SubResource("BoxMesh_a1q2r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Elevator doors" unique_id=1682022544]
+transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, 0.94569075, -0.41615224, 0.17243266)
+mesh = SubResource("BoxMesh_a1q2r")
