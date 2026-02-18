@@ -16,7 +16,10 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-	if Input.is_action_just_pressed("interact"):
-		print("BAMMM!!!!!!!!")
+		
+	if (Input.is_action_just_pressed("interact")):
+		print("Change Scene")
+		get_tree().change_scene_to_file("res://test.tscn")
 
 	move_and_slide()
+	#&& body.is_in_group("puzzle")
