@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://1l3mvmxpm6cg"]
+
+[ext_resource type="Script" uid="uid://k6m210k0u5dk" path="res://Scenes/Gears/Gear.gd" id="1_fnod6"]
+[ext_resource type="Texture2D" uid="uid://cmd5ljyak7v3j" path="res://Textures/Gears/medium_gear.png" id="2_fnod6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fnod6"]
+radius = 90.02222
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lifck"]
+radius = 5.0990195
+
+[node name="LargeGear" type="Node2D" unique_id=2048156525]
+script = ExtResource("1_fnod6")
+gear_type = "med"
+rotation_multiplier = 0.5
+
+[node name="Area2D" type="Area2D" parent="." unique_id=587056603]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1314000581]
+shape = SubResource("CircleShape2D_fnod6")
+
+[node name="MiddleArea" type="Area2D" parent="." unique_id=833770905]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea" unique_id=425097781]
+shape = SubResource("CircleShape2D_lifck")
+
+[node name="MediumGear" type="Sprite2D" parent="." unique_id=713309297]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_fnod6")
+
+[connection signal="input_event" from="Area2D" to="." method="_gear_clicked"]

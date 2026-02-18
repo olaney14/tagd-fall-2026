@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://k2w131dl2eq7"]
+
+[ext_resource type="Script" uid="uid://k6m210k0u5dk" path="res://Scenes/Gears/Gear.gd" id="1_kcnqn"]
+[ext_resource type="Texture2D" uid="uid://spq2g3m3je15" path="res://Textures/Gears/small_gear.png" id="2_hykxk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcnqn"]
+radius = 53.460266
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cs1hc"]
+radius = 5.0990195
+
+[node name="SmallGear" type="Node2D" unique_id=2075832475]
+script = ExtResource("1_kcnqn")
+gear_type = "small"
+
+[node name="SmallGear" type="Sprite2D" parent="." unique_id=1450737204]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_hykxk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=453999730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=241876940]
+shape = SubResource("CircleShape2D_kcnqn")
+
+[node name="MiddleArea" type="Area2D" parent="." unique_id=355815381]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleArea" unique_id=1507531571]
+shape = SubResource("CircleShape2D_cs1hc")
+
+[connection signal="input_event" from="Area2D" to="." method="_gear_clicked"]
+[connection signal="input_event" from="MiddleArea" to="." method="_gear_clicked"]
