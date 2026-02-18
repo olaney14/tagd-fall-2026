@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="TAGD Fall 2026"
-run/main_scene="uid://byi1h6aiwblmm"
+run/main_scene="uid://5yun5ilbrx6k"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://sprites/icon.svg"
 
 [input]
 

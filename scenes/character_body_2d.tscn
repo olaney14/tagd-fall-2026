@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://twvi1n1la53w"]
+[gd_scene format=3 uid="uid://byi1h6aiwblmm"]
 
-[ext_resource type="Script" uid="uid://bnuwfca8wl4is" path="res://character_body_2d.gd" id="1_72b0p"]
-[ext_resource type="Texture2D" uid="uid://cnbkr16vtc40p" path="res://icon.svg" id="2_rbyjf"]
-[ext_resource type="Texture2D" uid="uid://dwb3p34xwp0vm" path="res://sprites/switch off.png" id="3_gwjhk"]
-[ext_resource type="Script" uid="uid://mgjnf2yqicn4" path="res://area_2d.gd" id="3_rbyjf"]
+[ext_resource type="Script" uid="uid://bnuwfca8wl4is" path="res://scripts/character_body_2d.gd" id="1_dn4c7"]
+[ext_resource type="Texture2D" uid="uid://cnbkr16vtc40p" path="res://sprites/icon.svg" id="2_4vejd"]
+[ext_resource type="Texture2D" uid="uid://dwb3p34xwp0vm" path="res://sprites/switch off.png" id="3_ws0vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44cfe"]
 size = Vector2(126, 128)
@@ -19,7 +18,7 @@ size = Vector2(136, 177.99997)
 [node name="Node2D" type="Node2D" unique_id=1825250420]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1871862447]
-script = ExtResource("1_72b0p")
+script = ExtResource("1_dn4c7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=395396457]
 position = Vector2(94, 576)
@@ -27,7 +26,7 @@ shape = SubResource("RectangleShape2D_44cfe")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=738390124]
 position = Vector2(94, 577)
-texture = ExtResource("2_rbyjf")
+texture = ExtResource("2_4vejd")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1987408404]
 position = Vector2(3, 648)
@@ -45,7 +44,6 @@ position = Vector2(581, 368)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=17804621]
 position = Vector2(581, 555)
-script = ExtResource("3_rbyjf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=645915128]
 scale = Vector2(0.99999994, 0.99999994)
@@ -53,4 +51,4 @@ shape = SubResource("RectangleShape2D_dd465")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=640727108]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_gwjhk")
+texture = ExtResource("3_ws0vm")

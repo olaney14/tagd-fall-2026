@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://5yun5ilbrx6k"]
+
+[ext_resource type="Script" uid="uid://dk6wuchl5tnqi" path="res://scripts/firstpersonPov.gd" id="1_8o2wm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pc862"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a1q2r"]
+
+[node name="Node3D" type="Node3D" unique_id=738001711]
+
+[node name="head" type="Node3D" parent="." unique_id=927805469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2017353, 0)
+script = ExtResource("1_8o2wm")
+
+[node name="camera" type="Camera3D" parent="head" unique_id=929296554]
+
+[node name="Elevator" type="Node" parent="." unique_id=611212336]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Elevator" unique_id=48669245]
+transform = Transform3D(4.35, 0, 0, 0, -1.7576349e-07, -0.102, 0, 4.021, -4.4585615e-09, 0.008641213, -0.9344506, -0.06981802)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Elevator" unique_id=1499920373]
+transform = Transform3D(4.35, 0, 0, 0, -1.7576349e-07, -0.102, 0, 4.021, -4.4585615e-09, 0.008641213, 4.200859, -0.06981802)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Elevator" unique_id=1084186119]
+transform = Transform3D(4.729, 0, 0, 0, 5.2, 0, 0, 0, 0.082, -0.04, 1.5039608, -2.1691484)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Elevator" unique_id=2132831688]
+transform = Transform3D(-0.06718231, 0, -0.081991725, 0, 5.36, 0, 4.728523, 0, -0.001164929, 2.1764264, 1.5039608, -0.0065948963)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Elevator" unique_id=388967514]
+transform = Transform3D(-0.06718231, 0, -0.081991725, 0, 5.36, 0, 4.728523, 0, -0.001164929, -2.2362626, 1.5039608, -0.0065948963)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Elevator" unique_id=237689241]
+transform = Transform3D(4.729, 0, 0, 0, 5.36, 0, 0, 0, 0.082, -0.04, 1.5039608, 1.862679)
+mesh = SubResource("BoxMesh_pc862")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1435942585]
+transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, -0.93410623, 1.4001744, -2.040175)
+mesh = SubResource("BoxMesh_a1q2r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1682022544]
+transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, 0.7681434, 1.4001744, -2.040175)
+mesh = SubResource("BoxMesh_a1q2r")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=685713477]
+transform = Transform3D(1, 0, 0, 0, 0.31765223, 0.9482073, 0, -0.9482073, 0.31765223, 0, 0, 0)
