@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bnuwfca8wl4is" path="res://scripts/character_body_2d.gd" id="1_dn4c7"]
 [ext_resource type="Texture2D" uid="uid://cnbkr16vtc40p" path="res://sprites/icon.svg" id="2_4vejd"]
+[ext_resource type="Script" uid="uid://bb57psum7y5fd" path="res://scripts/mouse area2D.gd" id="3_4vejd"]
 [ext_resource type="Texture2D" uid="uid://dwb3p34xwp0vm" path="res://sprites/switch off.png" id="3_ws0vm"]
+[ext_resource type="Texture2D" uid="uid://cssivshv1t2e2" path="res://sprites/switch on.png" id="5_ws0vm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_44cfe"]
 size = Vector2(126, 128)
@@ -44,11 +46,22 @@ position = Vector2(581, 368)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=17804621]
 position = Vector2(581, 555)
+script = ExtResource("3_4vejd")
+
+[node name="TextureButton" type="TextureButton" parent="Area2D" unique_id=1294882957]
+offset_left = -123.0
+offset_top = -80.0
+offset_right = 124.0
+offset_bottom = 84.0
+texture_normal = ExtResource("3_ws0vm")
+texture_pressed = ExtResource("5_ws0vm")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=645915128]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_dd465")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=640727108]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("3_ws0vm")
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_mouse_exited"]
+[connection signal="pressed" from="Area2D/TextureButton" to="Area2D" method="_on_texture_button_pressed"]
