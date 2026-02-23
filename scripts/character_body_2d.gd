@@ -17,9 +17,25 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		
-	if (Input.is_action_just_pressed("interact")):
-		print("Change Scene")
-		get_tree().change_scene_to_file("res://test.tscn")
+	
 
 	move_and_slide()
 	#&& body.is_in_group("puzzle")
+
+
+var interaction = false
+func _on_elevator_area_body_entered(body: Node2D) -> void:
+	interaction = true
+	print("entering elev")
+	$"../Elevator area/Sprite2D".show()
+	
+
+
+func _on_elevator_area_body_exited(body: Node2D) -> void:
+	print("leaving elev")
+	interaction = false
+	$"../Elevator area/Sprite2D".hide()
+func _process(delta):
+	if interaction and Input.is_action_just_pressed("interact"):
+		print("Change Scene")
+		get_tree().change_scene_to_file("res://scenes/elevator.tscn")
