@@ -1,17 +1,10 @@
 extends Area2D
 
-# Drag your button node here in the inspector
-var _player_in_area = false
-
-func _on_body_entered(body):
-	# Check if the entered body is the player by checking its name,
-	# or by checking its group (e.g., "Player"), or using a class_name.
-	if body.name == "Player":
-	# or if body.is_in_group("Player"):
-		_player_in_area = true
-		print("Player entered the collision box!")
-
-func _on_body_exited(body):
-	if body.name == "Player":
-		_player_in_area = false
-		print("Player exited the collision box!")
+func _on_input_event(viewport, event, shape_idx):
+	# Check if the event is a mouse button click
+	if event is InputEventMouseButton:
+		# Check if it's the left button and it was pressed down
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print("Clicked on: thing")
+			# Add your interaction logic here (e.g., queue_free() to delete)
+			

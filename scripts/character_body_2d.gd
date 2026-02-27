@@ -30,7 +30,6 @@ func _on_elevator_area_body_entered(body: Node2D) -> void:
 	$"../Elevator area/Sprite2D".show()
 	
 
-
 func _on_elevator_area_body_exited(body: Node2D) -> void:
 	print("leaving elev")
 	interaction = false
