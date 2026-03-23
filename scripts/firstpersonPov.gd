@@ -1,6 +1,6 @@
 extends Node3D
 var edge_margin = 100 # Pixels from edge to trigger rotation
-var senstivity = 0.008
+var senstivity = 1
 @onready var viewport = get_viewport()
 @onready var head = $"."
 @onready var camera = $Camera
@@ -8,17 +8,17 @@ var senstivity = 0.008
 func _process(delta):
 	# Rotate right
 	if Input.is_action_pressed("right"):
-		head.rotate_y(-senstivity)
+		head.rotate_y(-senstivity * delta)
 	# Rotate left
 	elif Input.is_action_pressed("left"):
-		head.rotate_y(senstivity)
+		head.rotate_y(senstivity * delta)
 		
 	# Vertical rotation (optional)
 	if Input.is_action_pressed("down"):
-		camera.rotate_x(-senstivity)
+		camera.rotate_x(-senstivity * delta)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 	elif Input.is_action_pressed("up"):
-		camera.rotate_x(senstivity)
+		camera.rotate_x(senstivity * delta)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
 
