@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://dhx0otwrl83vy"]
 
-[ext_resource type="Texture2D" uid="uid://dtytrdlfbkxfn" path="res://Textures/Gears/temp_hole.png" id="1_xo55e"]
+[ext_resource type="Texture2D" uid="uid://pjnw2neaa" path="res://Textures/Tiles/pegboard.png" id="1_27jv7"]
 
 [node name="GearHole" type="Node2D" unique_id=2023571061]
 
 [node name="TempHole" type="Sprite2D" parent="." unique_id=973308377]
 z_index = -2
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_xo55e")
+scale = Vector2(2, 2)
+texture = ExtResource("1_27jv7")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)

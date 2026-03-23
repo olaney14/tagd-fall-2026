@@ -4,11 +4,13 @@ class_name Gear
 @onready var area = $Area2D
 @onready var inner_area = $MiddleArea
 
-#@export var blocked_spaces: Array[Vector2i]
+@export var blocked_spaces: Array[Vector2i]
+@export var block_levels: Array[int]
 #@export var connect_to_spaces: Array[Vector2i]
 #@export var connect_from_spaces: Array[Vector2i]
 @export var gear_type: String
 @export var rotation_multiplier: float = 1.0
+#@export var rotation_offset_step: float = PI / 8
 
 var on_grid = true
 var slot_x = 0
@@ -18,6 +20,9 @@ var connected_board: GearBoard = null
 var rotation_offset = 0
 
 var turn = 0
+
+func grid_pos():
+	return Vector2i(slot_x, slot_y)
 
 func _gear_clicked(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	var offset = global_position - event.position

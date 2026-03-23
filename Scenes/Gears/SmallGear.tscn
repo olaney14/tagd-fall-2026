@@ -11,7 +11,10 @@ radius = 5.0990195
 
 [node name="SmallGear" type="Node2D" unique_id=2075832475]
 script = ExtResource("1_kcnqn")
+blocked_spaces = Array[Vector2i]([Vector2i(0, 0)])
+block_levels = Array[int]([2])
 gear_type = "small"
+rotation_multiplier = null
 
 [node name="SmallGear" type="Sprite2D" parent="." unique_id=1450737204]
 scale = Vector2(2.5, 2.5)
