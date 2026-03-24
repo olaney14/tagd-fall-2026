@@ -1,6 +1,6 @@
 extends Node3D
 var edge_margin = 100 # Pixels from edge to trigger rotation
-var senstivity = 1
+var senstivity = 10
 @onready var viewport = get_viewport()
 @onready var head = $"."
 @onready var camera = $Camera

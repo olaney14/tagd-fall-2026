@@ -24,7 +24,7 @@ script = ExtResource("1_8o2wm")
 
 [node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1220266330]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, -3.5527137e-15, 1, 0, 0, 0)
-target_position = Vector3(0, 0, -2)
+target_position = Vector3(0, 0, -3)
 collide_with_areas = true
 
 [node name="Elevator" type="Node" parent="." unique_id=611212336]
