@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://5yun5ilbrx6k"]
+[gd_scene format=4 uid="uid://5yun5ilbrx6k"]
 
 [ext_resource type="Script" uid="uid://dk6wuchl5tnqi" path="res://scripts/firstpersonPov.gd" id="1_8o2wm"]
 
@@ -7,22 +7,40 @@
 [sub_resource type="BoxMesh" id="BoxMesh_a1q2r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8o2wm"]
-albedo_color = Color(0.9397737, 0.34187686, 0.45195788, 1)
+albedo_color = Color(1, 0.21798673, 0.37615904, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_8o2wm"]
 material = SubResource("StandardMaterial3D_8o2wm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8lbij"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8lbij"]
+albedo_color = Color(0.3529412, 1, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jmdsd"]
+_surfaces = [{
+"aabb": AABB(-0.5028868, -0.5028868, -0.5028868, 1.0057735, 1.0057735, 1.0057735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"material": SubResource("StandardMaterial3D_8lbij"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("ML0AvzC9AD8wvQA/ML0APzC9AD8wvQC/ML0APzC9AD8wvQA/ML0AvzC9AD8wvQC/ML0AvzC9AL8wvQA/ML0APzC9AL8wvQC/ML0APzC9AL8wvQA/ML0AvzC9AL8wvQC/ML0APzC9AD8wvQA/ML0AvzC9AD8wvQC/ML0APzC9AD8wvQC/ML0AvzC9AD8wvQA/ML0APzC9AL8wvQA/ML0AvzC9AL8wvQC/ML0APzC9AL8wvQC/ML0AvzC9AL8wvQA/ML0APzC9AD8wvQA/ML0AvzC9AL8wvQA/ML0AvzC9AD8wvQA/ML0APzC9AL8wvQA/ML0APzC9AD8wvQC/ML0AvzC9AL8wvQC/ML0AvzC9AD8wvQC/ML0APzC9AL8wvQC//3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
 [node name="Node3D" type="Node3D" unique_id=738001711]
 
 [node name="Head" type="Node3D" parent="." unique_id=927805469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2017353, 0)
 script = ExtResource("1_8o2wm")
+senstivity = 3
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=929296554]
 
-[node name="RayCast3D" type="RayCast3D" parent="Head" unique_id=1220266330]
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera" unique_id=1220266330]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, -3.5527137e-15, 1, 0, 0, 0)
 target_position = Vector3(0, 0, -3)
 collide_with_areas = true
@@ -76,10 +94,13 @@ transform = Transform3D(1.7, 0, 0, 0, 4.245, 0, 0, 0, 0.11, 0.94569075, -0.41615
 mesh = SubResource("BoxMesh_a1q2r")
 
 [node name="button" type="MeshInstance3D" parent="." unique_id=1419126119]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.09447235, 1.581574, 1.2701852, -2.0128403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.09447235, 1.581574, 1.2701852, -1.8314873)
 mesh = SubResource("BoxMesh_8o2wm")
 
 [node name="Area3D" type="Area3D" parent="button" unique_id=715838073]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="button/Area3D" unique_id=290801611]
 shape = SubResource("BoxShape3D_8lbij")
+
+[node name="highlight" type="MeshInstance3D" parent="button" unique_id=1683861232]
+mesh = SubResource("ArrayMesh_jmdsd")

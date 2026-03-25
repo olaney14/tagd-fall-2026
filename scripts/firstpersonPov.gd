@@ -1,10 +1,10 @@
 extends Node3D
 var edge_margin = 100 # Pixels from edge to trigger rotation
-var senstivity = 10
+@export var senstivity = 1
 @onready var viewport = get_viewport()
 @onready var head = $"."
 @onready var camera = $Camera
-@onready var interaction_ray = $RayCast3D
+@onready var interaction_ray = $Camera/RayCast3D
 func _process(delta):
 	# Rotate right
 	if Input.is_action_pressed("right"):
@@ -20,7 +20,8 @@ func _process(delta):
 	elif Input.is_action_pressed("up"):
 		camera.rotate_x(senstivity * delta)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-		
+	if interaction_ray.is_colliding():
+		print_debug("Entering Collider")
 
 	
 	#var mouse_pos = viewport.get_mouse_position()
@@ -44,8 +45,6 @@ func _process(delta):
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		if interaction_ray.is_colliding():
-			print_debug("The pew pew reached")
+			print_debug("COLLISION PEW")
 			var collider = interaction_ray.get_collider()	
 		print("press pew pew")
-func _unhandled_input(event):
-	pass
